@@ -1,6 +1,6 @@
 # Nuxt Storyblok Router
 
-[![CircleCI](https://circleci.com/gh/wearewondrous/nuxt-storyblok-router.svg?style=svg&circle-token=39cac53ced81c450bac89e8c5d24992899a7edb5)]
+[![CircleCI](https://circleci.com/gh/wearewondrous/nuxt-storyblok-router.svg?style=svg&circle-token=39cac53ced81c450bac89e8c5d24992899a7edb5)](https://circleci.com/gh/wearewondrous/nuxt-storyblok-router)
 [![Standard JS][standard-js-src]][standard-js-href]
 
 > Nuxt.js module to use storyblok routes instead of pages/ directory
