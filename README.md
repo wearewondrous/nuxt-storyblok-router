@@ -16,14 +16,52 @@
 ```js
 {
   modules: [
-    'nuxt-storyblok-router',
-  ],
-  storyblokRouter: {
-    version: 'draft',
-    exclude: ['settings']
-  },
+    ['nuxt-storyblok-router', {
+      // Module option here
+    }]
+  ]
 }
 ```
+
+### Using top level options
+
+```js
+{
+  modules: [
+    'nuxt-storyblok-router'
+  ],
+  storyblokRouter: [
+    // Module options here
+  ]
+}
+```
+
+## Options
+
+### `accessToken`
+
+- Default: `this.options.storyblok || ''`
+
+Access Token for the StoryBlok API. Not needed if you already have installed the [Storyblok Nuxt.js module](https://github.com/storyblok/storyblok-nuxt)  
+
+### `version`
+
+- Default: `'published'`
+
+Version of the Storyblok Content. Use 'draft' for the preview Access Token.
+
+### `defaultLanguage`
+
+- Default: `''`
+
+Optional. If your Storyblok Site has multiple languages, set `defaultLanguage` to the key of your Storyblok default language.
+
+### `exclude`
+
+- Default: `[]`
+
+Optional. Array of pages which shoud not be rendered. (e.g. `settings`)
+
 
 ## Development
 
