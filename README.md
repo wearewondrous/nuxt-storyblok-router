@@ -9,14 +9,14 @@
 
 ## Setup
 
-1. Add the `nuxt-storyblok-router` dependency with `yarn` or `npm` to your project
-2. Add `nuxt-storyblok-router` to the `modules` section of `nuxt.config.js`
+1. Add the `@wearewondrous/nuxt-storyblok-router` dependency with `yarn` or `npm` to your project
+2. Add `@wearewondrous/nuxt-storyblok-router` to the `modules` section of `nuxt.config.js`
 3. Configure it:
 
 ```js
 {
   modules: [
-    ['nuxt-storyblok-router', {
+    ['@wearewondrous/nuxt-storyblok-router', {
       // Module option here
     }]
   ]
@@ -28,7 +28,7 @@
 ```js
 {
   modules: [
-    'nuxt-storyblok-router'
+    '@wearewondrous/nuxt-storyblok-router'
   ],
   storyblokRouter: [
     // Module options here
@@ -61,6 +61,76 @@ Optional. If your Storyblok Site has multiple languages, set `defaultLanguage` t
 - Default: `[]`
 
 Optional. Array of pages which shoud not be rendered. (e.g. `settings`)
+
+
+## Usage
+
+When enabled, this module will disable the traditional Nuxt router. The Router file will be generated according to your Storyblok Routes. 
+
+### Content Types
+
+In Storyblok all pages need a [Content Type](https://www.storyblok.com/docs/Guides/root-blocks).
+
+1. Create a Content Type in Storyblok.
+2. Create a Vue Component with the same name which will act as a Type Components in the `pages/` directory. These Content Types have all the native nuxt featutes like asyncData, fetch, head, etc.
+
+> Tip: Use camelCase for the naming in Storyblok and PascalCase for your Component Naming. 
+
+#### Usage with [nuxt-storyblok-queries](https://github.com/wearewondrous/nuxt-storyblok-queries) (Recommended)
+```html
+// pages/PageGeneric.vue
+
+<template>
+  <!-- Your template -->
+</template>
+
+<script>
+export default {
+  async asyncData({ app }) {
+    const story = await $storyblok.getCurrentStory()
+
+    return {
+      story
+    }
+  }
+}
+</script>
+```
+
+#### Usage with [storyblok-nuxt](https://github.com/storyblok/storyblok-nuxt)
+```html
+// pages/PageGeneric.vue
+
+<template>
+  <!-- Your template -->
+</template>
+
+<script>
+export default {
+  async asyncData({ app, route }) {
+    const story = await app.$storyapi.get(`cdn/stories/${route.path}`)
+
+    return {
+      story
+    }
+  }
+}
+</script>
+```
+
+### Languages
+
+The Router will automaticly detect if you use multiple language. If you have multiple languages, the router will use an optional [dynamic parameter](https://router.vuejs.org/guide/essentials/dynamic-matching.html) on each route.
+The dynamic parameter is optional, so if no language is specified the default languag can be used.
+
+```js
+const router = new VueRouter({
+  routes: [
+    // dynamic segments start with a colon
+    { path: '/:lang?/about', component: ContentType }
+  ]
+})
+```
 
 
 ## Development
