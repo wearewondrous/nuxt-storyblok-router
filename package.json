@@ -1,9 +1,16 @@
 {
-  "name": "nuxt-storyblok-router",
+  "name": "@wearewondrous/nuxt-storyblok-router",
   "version": "0.1.0",
+  "description": "Nuxt.js module to use storyblok routes instead of pages/ directory",
   "main": "lib/module.js",
   "license": "MIT",
-  "private": true,
+  "repository": "https://github.com/wearewondrous/nuxt-storyblok-router",
+  "contributors": [
+    {
+      "name": "Serafin Lichtenhahn <serafin@wearewondrous.com>",
+      "url": "https://github.com/seralichtenhahn"
+    }
+  ],
   "scripts": {
     "dev": "nuxt example",
     "lint": "eslint --ext .js,.vue lib",
