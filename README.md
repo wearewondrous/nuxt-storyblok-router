@@ -143,7 +143,7 @@ const router = new VueRouter({
 
 [MIT License](./LICENSE)
 
-Copyright (c) {{ author }}
+Copyright (c) [WONDROUS LTD](https://www.wearewondrous.com/)
 
 <!-- Badges -->
 [standard-js-src]: https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square
