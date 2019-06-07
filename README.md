@@ -72,7 +72,7 @@ When enabled, this module will disable the traditional Nuxt router. The Router f
 In Storyblok all pages need a [Content Type](https://www.storyblok.com/docs/Guides/root-blocks).
 
 1. Create a Content Type in Storyblok.
-2. Create a Vue Component with the same name which will act as a Type Components in the `pages/` directory. These Content Types have all the native nuxt featutes like asyncData, fetch, head, etc.
+2. Create a Vue Component with the same name, which will act as a Content Type, in the `pages/` directory. These Components have all the native nuxt featutes like asyncData, fetch, head, etc.
 
 > Tip: Use camelCase for the naming in Storyblok and PascalCase for your Component Naming. 
 
