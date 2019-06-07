@@ -109,7 +109,7 @@ export default {
 <script>
 export default {
   async asyncData({ app, route }) {
-    const story = await app.$storyapi.get(`cdn/stories/${route.path}`)
+    const story = await app.$storyapi.get(`cdn/stories/${route.path}`)
 
     return {
       story
