@@ -63,6 +63,12 @@ Optional. If your Storyblok Site has multiple languages, set `defaultLanguage` t
 
 Optional. Array of pages which shoud not be rendered. (e.g. `settings`)
 
+### `disabled`
+
+- Default: `false`
+
+Optional. Disables the module.
+
 
 ## Usage
 
