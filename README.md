@@ -63,6 +63,24 @@ Optional. If your Storyblok Site has multiple languages, set `defaultLanguage` t
 
 Optional. Array of pages which shoud not be rendered. (e.g. `settings`)
 
+### `sitemap`
+
+- Default: `false`
+
+Optional. Integration with the [Nuxt Sitemap Module](https://www.npmjs.com/package/@nuxtjs/sitemap). Use a Object to configure the Module with [Options](https://www.npmjs.com/package/@nuxtjs/sitemap#configuration)
+
+```js
+// nuxt.config.js
+export default {
+  storyblokRouter: {
+    sitemap: {
+      hostname: "domain.com",
+      cacheTime: 10000000000
+    }
+  }
+}
+```
+
 ### `disabled`
 
 - Default: `false`
