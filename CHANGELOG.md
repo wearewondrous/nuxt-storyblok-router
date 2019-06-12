@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v0.1.4...v0.2.0) (2019-06-12)
+
+
+### Features
+
+* add disabled property ([43f0d03](https://github.com/wearewondrous/nuxt-storyblok-router/commit/43f0d03))
+* integrate @nuxtjs/sitemap Module and inject all storyblok routes ([bff4693](https://github.com/wearewondrous/nuxt-storyblok-router/commit/bff4693))
+
+
+
 ### [0.1.4](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v0.1.3...v0.1.4) (2019-06-07)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@wearewondrous/nuxt-storyblok-router",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Nuxt.js module to use storyblok routes instead of pages/ directory",
   "main": "lib/module.js",
   "license": "MIT",
