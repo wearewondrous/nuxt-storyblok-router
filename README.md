@@ -51,6 +51,12 @@ Access Token for the StoryBlok API. Not needed if you already have installed the
 
 Version of the Storyblok Content. Use 'draft' for the preview Access Token.
 
+### `contentTypeDir`
+
+- Default: `'pages'`
+
+Optional. Directory where all [Content Types](https://www.storyblok.com/docs/Guides/root-blocks) are loaded from.
+
 ### `defaultLanguage`
 
 - Default: `''`
