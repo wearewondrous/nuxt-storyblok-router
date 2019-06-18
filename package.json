@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "dev": "nuxt example",
+    "generate": "nuxt generate example",
     "lint": "eslint --ext .js,.vue lib",
     "test": "yarn lint && yarn test:unit",
     "test:unit": "jest",
