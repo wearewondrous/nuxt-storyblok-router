@@ -8,9 +8,15 @@
 </template>
 
 <script>
+import get from 'lodash/get'
+
 export default {
   async asyncData({ app, route }) {
-    const { data } = await app.$storyapi.get(`cdn/stories${route.path}`)
+    const lang = get(route, 'params.lang', 'en')
+    const query = `cdn/stories${
+      lang === 'en' ? route.path.replace('/en', '') : route.path
+    }`
+    const { data } = await app.$storyapi.get(query)
 
     return data
   }

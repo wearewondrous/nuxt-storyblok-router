@@ -1,6 +1,6 @@
 const { resolve } = require('path')
 
-const accessToken = "pdkyV4RUmoFzi3IpAwbTrQtt"
+const accessToken = 'pdkyV4RUmoFzi3IpAwbTrQtt'
 
 module.exports = {
   rootDir: resolve(__dirname, '../'),
@@ -12,14 +12,11 @@ module.exports = {
   env: {
     accessToken
   },
-  modules: [
-    resolve(__dirname, "../")
-  ],
-  plugins: [
-    "./plugins/storyblokapi.js"
-  ],
+  modules: [resolve(__dirname, '../')],
+  plugins: ['./plugins/storyblokapi.js'],
   storyblokRouter: {
     accessToken,
-    contentTypeDir: "pages",
+    defaultLanguage: 'en',
+    contentTypeDir: 'example/pages'
   }
 }
