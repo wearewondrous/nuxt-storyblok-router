@@ -117,7 +117,7 @@ In Storyblok all pages need a [Content Type](https://www.storyblok.com/docs/Guid
 
 <script>
 export default {
-  async asyncData({ app }) {
+  async asyncData({ $storyblok }) {
     const story = await $storyblok.getCurrentStory()
 
     return {
