@@ -11,12 +11,20 @@
 import get from 'lodash/get'
 
 export default {
-  async asyncData({ app, route }) {
+  async asyncData({ app, route, error }) {
     const lang = get(route, 'params.lang', 'en')
     const query = `cdn/stories/${lang === 'en' ? '' : lang + '/'}home`
-    const { data } = await app.$storyapi.get(query)
 
-    return data
+    try {
+      const { data } = await app.$storyapi.get(query)
+
+      return data
+    } catch (e) {
+      error({
+        statusCode: 404,
+        message: 'Page not found'
+      })
+    }
   }
 }
 </script>
