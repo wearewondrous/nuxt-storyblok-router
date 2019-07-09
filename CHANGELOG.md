@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v0.2.3...v1.0.0) (2019-07-09)
+
+
+### Tests
+
+* add test cases ([0baef7e](https://github.com/wearewondrous/nuxt-storyblok-router/commit/0baef7e))
+
+
+
 ### [0.2.3](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v0.2.2...v0.2.3) (2019-06-18)
 
 
