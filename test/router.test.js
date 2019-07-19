@@ -89,15 +89,32 @@ describe('Storyblok Router with Options', () => {
     }
   })
 
-  test('generate Sitemap', async () => {
+  test('generate Sitemap with default paths', async () => {
     config.storyblokRouter.sitemap = true
+    config.storyblokRouter.generateDefaultPaths = true
     await buildNuxt(config)
 
     const sitemap = await get('/sitemap.xml')
-    expect(sitemap).toContain(`http://localhost:${port}/`)
-    expect(sitemap).toContain(`http://localhost:${port}/about`)
-    expect(sitemap).toContain(`http://localhost:${port}/fr`)
-    expect(sitemap).toContain(`http://localhost:${port}/fr/about`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/about</loc>`)
+  })
+
+  test('generate Sitemap without default paths', async () => {
+    config.storyblokRouter.sitemap = true
+    config.storyblokRouter.generateDefaultPaths = false
+    await buildNuxt(config)
+
+    const sitemap = await get('/sitemap.xml')
+    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/</loc>`)
+    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/about</loc>`)
   })
 
   test('generate Sitemap', async () => {
