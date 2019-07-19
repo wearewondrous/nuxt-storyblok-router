@@ -1,8 +1,8 @@
 # Common
-node_modules
-dist
-.nuxt
-coverage
+**/node_modules
+**/dist
+**/.nuxt
+**/coverage
 
 # Plugin
-lib/plugin.js
+**/plugin.js
