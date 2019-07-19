@@ -50,7 +50,7 @@
     "get-port": "^5.0.0",
     "husky": "^3.0.1",
     "jest": "^24.8.0",
-    "nuxt": "^2.8.1",
+    "nuxt": "latest",
     "request-promise-native": "^1.0.7",
     "standard-version": "^6.0.1"
   }
