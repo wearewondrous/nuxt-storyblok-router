@@ -5,4 +5,4 @@
 **/coverage
 
 # Plugin
-**/plugin.js
+lib/plugin.js
