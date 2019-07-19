@@ -93,6 +93,11 @@ export default {
 
 Optional. Disables the module.
 
+### `generateDefaultPaths`
+
+- Default: `false`
+
+Optional. If your Storyblok Site has multiple languages and `generateDefaultPaths` is set, paths without language code will be generated for the default language. For example if 'defaultLanguage' is 'en', '/about' and '/en/about' will be generated.
 
 ## Usage
 
