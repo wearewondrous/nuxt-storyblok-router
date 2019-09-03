@@ -99,6 +99,12 @@ Optional. Disables the module.
 
 Optional. If your Storyblok Site has multiple languages and `generateDefaultPaths` is set, paths without language code will be generated for the default language. For example if 'defaultLanguage' is 'en', '/about' and '/en/about' will be generated.
 
+### `useFallback`
+
+- Default: `false`
+
+Optional. Adds explicit fallback to routes, needed for Storyblok live preview of newly created pages. Requires a `fallback.vue` file in your `contentTypeDir`.
+
 ## Usage
 
 When enabled, this module will disable the traditional Nuxt router. The Router file will be generated according to your Storyblok Routes. 
