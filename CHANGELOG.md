@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.2.0...v1.2.1) (2019-09-04)
+
+
+### Bug Fixes
+
+* add regex check for lang code ([2ecebd2](https://github.com/wearewondrous/nuxt-storyblok-router/commit/2ecebd2))
+* fix regex ([84c0d57](https://github.com/wearewondrous/nuxt-storyblok-router/commit/84c0d57))
+
+
+### Tests
+
+* change expected 404 string ([a2a0b91](https://github.com/wearewondrous/nuxt-storyblok-router/commit/a2a0b91))
+
+
+
 ## [1.2.0](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.1.0...v1.2.0) (2019-09-03)
 
 
