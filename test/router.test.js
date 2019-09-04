@@ -61,7 +61,7 @@ describe('Storyblok Router', () => {
       await get('/404')
     } catch ({ statusCode, message }) {
       expect(statusCode).toBe(404)
-      expect(message).toContain('Page not found')
+      expect(message).toContain('This page could not be found')
     }
   })
 })
@@ -85,7 +85,7 @@ describe('Storyblok Router with Options', () => {
       await get('/settings')
     } catch ({ statusCode, message }) {
       expect(statusCode).toBe(404)
-      expect(message).toContain('Page not found')
+      expect(message).toContain('This page could not be found')
     }
   })
 
