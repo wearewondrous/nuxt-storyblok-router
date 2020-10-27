@@ -97,10 +97,13 @@ describe('Storyblok Router with Options', () => {
     const sitemap = await get('/sitemap.xml')
     expect(sitemap).toContain(`<loc>http://localhost:${port}/</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/blog</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/blog</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/blog</loc>`)
   })
 
   test('generate Sitemap without default paths', async () => {
@@ -111,10 +114,12 @@ describe('Storyblok Router with Options', () => {
     const sitemap = await get('/sitemap.xml')
     expect(sitemap).not.toContain(`<loc>http://localhost:${port}/</loc>`)
     expect(sitemap).not.toContain(`<loc>http://localhost:${port}/about</loc>`)
+    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/blog</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/blog</loc>`)
     expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/about</loc>`)
+    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/blog</loc>`)
   })
 
   test('generate Sitemap', async () => {
