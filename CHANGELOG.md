@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.4.4...v1.5.0) (2020-10-28)
+
+
+### Features
+
+* add trailingslash option ([337e13c](https://github.com/wearewondrous/nuxt-storyblok-router/commit/337e13c5e42250b7182c96924e48ed1e38adc135))
+
 ### [1.4.4](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.4.3...v1.4.4) (2020-10-28)
 
 
