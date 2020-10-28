@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.4](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.4.3...v1.4.4) (2020-10-28)
+
+
+### Bug Fixes
+
+* don't generate aliases for frontpage ([1503f74](https://github.com/wearewondrous/nuxt-storyblok-router/commit/1503f74e0b328c9e7744d273bf989ba713443bc0))
+
 ### [1.4.3](https://github.com/wearewondrous/nuxt-storyblok-router/compare/v1.4.2...v1.4.3) (2020-10-27)
 
 
