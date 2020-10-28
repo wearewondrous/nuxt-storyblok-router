@@ -4,6 +4,19 @@ const { Nuxt, Builder } = require('nuxt')
 const request = require('request-promise-native')
 const getPort = require('get-port')
 
+const testPaths = [
+  '/about',
+  '/blog',
+  '/blog/post-one',
+  '/blog/post-two'
+]
+
+const testLangs = [
+  'en',
+  'fr',
+  'de'
+]
+
 const config = require('../example/nuxt.config')
 config.dev = false
 
@@ -95,15 +108,15 @@ describe('Storyblok Router with Options', () => {
     await buildNuxt(config)
 
     const sitemap = await get('/sitemap.xml')
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/about</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/blog</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/blog</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/about</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/blog</loc>`)
+    testPaths.forEach((path) => {
+      expect(sitemap).toContain(`<loc>http://localhost:${port}${path}</loc>`)
+    })
+
+    testLangs.forEach((lang) => {
+      testPaths.forEach((path) => {
+        expect(sitemap).toContain(`<loc>http://localhost:${port}/${lang}${path}</loc>`)
+      })
+    })
   })
 
   test('generate Sitemap without default paths', async () => {
@@ -112,14 +125,45 @@ describe('Storyblok Router with Options', () => {
     await buildNuxt(config)
 
     const sitemap = await get('/sitemap.xml')
-    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/</loc>`)
-    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/about</loc>`)
-    expect(sitemap).not.toContain(`<loc>http://localhost:${port}/blog</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/about</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/en/blog</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr</loc>`)
-    expect(sitemap).toContain(`<loc>http://localhost:${port}/fr/blog</loc>`)
+
+    testLangs.forEach((lang) => {
+      testPaths.forEach((path) => {
+        expect(sitemap).toContain(`<loc>http://localhost:${port}/${lang}${path}</loc>`)
+      })
+    })
+  })
+
+  test('generate Sitemap with default paths with trailingSlash', async () => {
+    config.storyblokRouter.sitemap = true
+    config.storyblokRouter.trailingSlash = true
+    config.storyblokRouter.generateDefaultPaths = true
+    await buildNuxt(config)
+
+    const sitemap = await get('/sitemap.xml')
+    testPaths.forEach((path) => {
+      expect(sitemap).toContain(`<loc>http://localhost:${port}${path}/</loc>`)
+    })
+
+    testLangs.forEach((lang) => {
+      testPaths.forEach((path) => {
+        expect(sitemap).toContain(`<loc>http://localhost:${port}/${lang}${path}/</loc>`)
+      })
+    })
+  })
+
+  test('generate Sitemap without default paths with trailingSlash', async () => {
+    config.storyblokRouter.sitemap = true
+    config.storyblokRouter.trailingSlash = true
+    config.storyblokRouter.generateDefaultPaths = false
+    await buildNuxt(config)
+
+    const sitemap = await get('/sitemap.xml')
+
+    testLangs.forEach((lang) => {
+      testPaths.forEach((path) => {
+        expect(sitemap).toContain(`<loc>http://localhost:${port}/${lang}${path}/</loc>`)
+      })
+    })
   })
 
   test('generate Sitemap', async () => {
