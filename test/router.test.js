@@ -104,6 +104,7 @@ describe('Storyblok Router with Options', () => {
 
   test('generate Sitemap with default paths', async () => {
     config.storyblokRouter.sitemap = true
+    config.storyblokRouter.trailingSlash = false
     config.storyblokRouter.generateDefaultPaths = true
     await buildNuxt(config)
 
@@ -121,6 +122,7 @@ describe('Storyblok Router with Options', () => {
 
   test('generate Sitemap without default paths', async () => {
     config.storyblokRouter.sitemap = true
+    config.storyblokRouter.trailingSlash = false
     config.storyblokRouter.generateDefaultPaths = false
     await buildNuxt(config)
 
